@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a GIF</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+            color: #ff4d4d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            position: relative;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1::before, h1::after {
+            content: "❤️";
+            font-size: 1.5em;
+            position: absolute;
+            top: -15px;
+        }
+        h1::before {
+            left: -80px; /* Adjusted distance from the text */
+        }
+        h1::after {
+            right: -80px; /* Adjusted distance from the text */
+        }
+        .menu {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .menu button {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 102, 102, 0.4);
+        }
+        .menu button:hover {
+            background-color: #ff4d4d;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 77, 77, 0.5);
+        }
+        .gif-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 80%;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            font-size: 1em;
+            color: #ff4d4d;
+        }
+        footer a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Choose a GIF</h1>
+    
+    <div class="menu">
+        <button onclick="showGif('gif1')">Winnie</button>
+        <button onclick="showGif('gif2')">Bubu</button>
+        <button onclick="showGif('gif3')">Pengu</button>
+    </div>
+    
+    <div class="gif-container">
+        <img id="gif1" src="https://media.tenor.com/jg0-zHyA_8oAAAAi/winnie-the-pooh-pooh-bear.gif" style="display: none;">
+        <img id="gif2" src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif" style="display: none;">
+        <img id="gif3" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ1NjN0azJld3k2cTRiMWxmOHFuZ2F4Y2Jmcm9wc25yd3I4ZDRzbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j4ABaI9BWdpYNI9ric/giphy.webp" style="display: none;">
+    </div>
+
+    <footer>
+        Made with ❤️ by apo to Antraki soy
+    </footer>
+    
+    <script>
+        function showGif(gifId) {
+            var gifs = document.querySelectorAll('.gif-container img');
+            gifs.forEach(function(gif) {
+                gif.style.display = 'none';
+            });
+            document.getElementById(gifId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

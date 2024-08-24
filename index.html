@@ -27,6 +27,20 @@
             position: relative;
             z-index: 1;
         }
+        h1::before, h1::after {
+            content: "💖";
+            font-size: 1.5em;
+            position: absolute;
+            top: -10px;
+        }
+        h1::before {
+            left: -60px;
+            color: #f48fb1; /* Ανοιχτό ροζ */
+        }
+        h1::after {
+            right: -60px;
+            color: #f48fb1; /* Ανοιχτό ροζ */
+        }
         .menu {
             display: flex;
             flex-direction: column;
@@ -182,10 +196,10 @@
 </head>
 <body>
 
-    <h1>Choose a GIF</h1>
+    <h1>💖 Choose a GIF 💖</h1>
     
     <div class="menu">
-        <button class="menu-button" onclick="openMenu()">Choose</button>
+        <button class="menu-button" onclick="openMenu()">Μενού</button>
     </div>
     
     <div class="gif-container">
@@ -197,16 +211,23 @@
     </div>
 
     <footer>
-        Made with 💖 apo to Antraki soy
+        Made with 💖 by apo to Antraki soy
     </footer>
     
     <div class="large-letter left-letter">Ε</div>
     <div class="large-letter right-letter">Α</div>
-
-    <!-- Modal for GIF preview -->
+    
+    <!-- Modal for GIF Menu -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <div class="gif-menu">
+                <button onclick="showGif('gif1')">Winnie</button>
+                <button onclick="showGif('gif2')">Bubu</button>
+                <button onclick="showGif('gif3')">Pengu</button>
+                <button onclick="showGif('gif4')">Waiting For Your Call 💖</button>
+                <button onclick="showGif('gif5')">Bouncing Heart</button>
+            </div>
             <img id="modalGif" src="" alt="GIF Preview">
         </div>
     </div>
@@ -215,22 +236,6 @@
         function openMenu() {
             var modal = document.getElementById("myModal");
             var modalGif = document.getElementById("modalGif");
-            
-            var menu = document.createElement('div');
-            menu.className = 'gif-menu';
-            menu.innerHTML = `
-                <button onclick="showGif('gif1')">Winnie</button>
-                <button onclick="showGif('gif2')">Bubu</button>
-                <button onclick="showGif('gif3')">Pengu</button>
-                <button onclick="showGif('gif4')">Waiting For Your Call 💖</button>
-                <button onclick="showGif('gif5')">Bouncing Heart</button>
-            `;
-            
-            modal.innerHTML = `<div class="modal-content">
-                <span class="close">&times;</span>
-                <img id="modalGif" src="" alt="GIF Preview">
-                ${menu.outerHTML}
-            </div>`;
             
             modal.style.display = "block";
             

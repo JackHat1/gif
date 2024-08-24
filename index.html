@@ -41,18 +41,22 @@
             color: #f48fb1; /* Ανοιχτό ροζ */
         }
         .menu {
-            margin-bottom: 20px;
             display: flex;
+            flex-direction: row;
             gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            background-color: #f5f5f5; /* Ελαφρύ γκρι φόντο */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .menu button {
             background-color: #f06292; /* Ροζ */
             color: white;
             border: none;
             padding: 12px 24px;
-            margin: 5px;
             font-size: 16px;
             border-radius: 25px;
             cursor: pointer;
@@ -63,23 +67,6 @@
             background-color: #ec407a; /* Σκοτεινότερο ροζ */
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(236, 64, 122, 0.3);
-        }
-        .gif-menu {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .gif-menu img {
-            width: 100px;
-            height: auto;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .gif-menu img:hover {
-            opacity: 0.8;
         }
         .gif-container {
             margin-top: 20px;
@@ -145,8 +132,11 @@
             h1 {
                 font-size: 2em;
             }
-            .gif-menu img {
-                width: 80px;
+            .menu button {
+                padding: 10px 20px;
+            }
+            .gif-container {
+                max-width: 95%;
             }
             .large-letter {
                 font-size: 6em; /* Μικρότερη γραμματοσειρά για κινητά */
@@ -164,12 +154,12 @@
 
     <h1>Choose a GIF</h1>
     
-    <div class="gif-menu">
-        <img src="https://media.tenor.com/jg0-zHyA_8oAAAAi/winnie-the-pooh-pooh-bear.gif" onclick="showGif('gif1')" alt="Winnie">
-        <img src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif" onclick="showGif('gif2')" alt="Bubu">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ1NjN0azJld3k2cTRiMWxmOHFuZ2F4Y2Jmcm9wc25yd3I4ZDRzbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j4ABaI9BWdpYNI9ric/giphy.webp" onclick="showGif('gif3')" alt="Pengu">
-        <img src="https://media.giphy.com/media/NeS6EnbODxVywoMmJJ/giphy.gif" onclick="showGif('gif4')" alt="Waiting For Your Call">
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTQyMzA0NmQwdGlwNnFhNnViaWxvbm53bjJ5cXF5b2Npcm9xdnBlOTJrdGo5NnZtbSZlcD12MV9naWZzX2dpZklkJmN0PXM/kfRKF0iqA8jyDqq1nH/200.gif" onclick="showGif('gif5')" alt="Bouncing Heart">
+    <div class="menu">
+        <button onclick="showGif('gif1')">Winnie</button>
+        <button onclick="showGif('gif2')">Bubu</button>
+        <button onclick="showGif('gif3')">Pengu</button>
+        <button onclick="showGif('gif4')">Waiting For Your Call 💖</button>
+        <button onclick="showGif('gif5')">Bouncing Heart</button>
     </div>
     
     <div class="gif-container">

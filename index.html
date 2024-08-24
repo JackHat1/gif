@@ -6,10 +6,10 @@
     <title>Choose a GIF</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
-            color: #ff4d4d;
+            background: linear-gradient(to bottom, #f8bbd0, #f5a6b1);
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,74 +17,94 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative;
         }
         h1 {
-            font-size: 3em;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #d81b60;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
             position: relative;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
         h1::before, h1::after {
-            content: "❤️";
-            font-size: 1.5em;
+            content: "💖";
+            font-size: 1.2em;
             position: absolute;
-            top: -15px;
+            top: -10px;
         }
         h1::before {
-            left: -80px;
+            left: -50px;
+            color: #f48fb1;
         }
         h1::after {
-            right: -80px;
+            right: -50px;
+            color: #f48fb1;
         }
         .menu {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             display: flex;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
         }
         .menu button {
-            background-color: #ff6666;
+            background-color: #f06292;
             color: white;
             border: none;
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 18px;
-            border-radius: 30px;
+            padding: 12px 24px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 25px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 102, 102, 0.4);
+            box-shadow: 0 4px 10px rgba(240, 98, 146, 0.2);
         }
         .menu button:hover {
-            background-color: #ff4d4d;
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(255, 77, 77, 0.5);
+            background-color: #ec407a;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(236, 64, 122, 0.3);
+        }
+        .gif-menu {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .gif-menu img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .gif-menu img:hover {
+            opacity: 0.8;
         }
         .gif-container {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            max-width: 80%;
+            max-width: 90%;
             animation: fadeIn 0.5s ease-in-out;
         }
-        img {
+        img.full-gif {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 8px;
         }
         footer {
             position: fixed;
             bottom: 10px;
-            font-size: 1em;
-            color: #ff4d4d;
+            font-size: 0.9em;
+            color: #d81b60;
         }
         footer a {
-            color: #ff4d4d;
+            color: #d81b60;
             text-decoration: none;
         }
         @keyframes fadeIn {
@@ -97,33 +117,53 @@
                 transform: scale(1);
             }
         }
+        .large-letter {
+            position: absolute;
+            font-size: 12em;
+            font-weight: bold;
+            color: #ffd700; /* Χρυσό χρώμα */
+            z-index: -1;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Σκιά */
+            font-family: 'Cursive', cursive; /* Καλλιγραφικό στυλ */
+        }
+        .left-letter {
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .right-letter {
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
 
     <h1>Choose a GIF</h1>
     
-    <div class="menu">
-        <button onclick="showGif('gif1')">Winnie</button>
-        <button onclick="showGif('gif2')">Bubu</button>
-        <button onclick="showGif('gif3')">Pengu</button>
-        <button onclick="showGif('gif4')">Waiting For Your Call ❤️</button>
-        <button onclick="showGif('gif5')">Bouncing Heart</button>
-        <button onclick="showGif('gif6')">Sweet Heart</button>
+    <div class="gif-menu">
+        <img src="https://media.tenor.com/jg0-zHyA_8oAAAAi/winnie-the-pooh-pooh-bear.gif" onclick="showGif('gif1')" alt="Winnie">
+        <img src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif" onclick="showGif('gif2')" alt="Bubu">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ1NjN0azJld3k2cTRiMWxmOHFuZ2F4Y2Jmcm9wc25yd3I4ZDRzbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j4ABaI9BWdpYNI9ric/giphy.webp" onclick="showGif('gif3')" alt="Pengu">
+        <img src="https://media.giphy.com/media/NeS6EnbODxVywoMmJJ/giphy.gif" onclick="showGif('gif4')" alt="Waiting For Your Call">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTQyMzA0NmQwdGlwNnFhNnViaWxvbm53bjJ5cXF5b2Npcm9xdnBlOTJrdGo5NnZtbSZlcD12MV9naWZzX2dpZklkJmN0PXM/kfRKF0iqA8jyDqq1nH/200.gif" onclick="showGif('gif5')" alt="Bouncing Heart">
     </div>
     
     <div class="gif-container">
-        <img id="gif1" src="https://media.tenor.com/jg0-zHyA_8oAAAAi/winnie-the-pooh-pooh-bear.gif" style="display: none;">
-        <img id="gif2" src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif" style="display: none;">
-        <img id="gif3" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ1NjN0azJld3k2cTRiMWxmOHFuZ2F4Y2Jmcm9wc25yd3I4ZDRzbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j4ABaI9BWdpYNI9ric/giphy.webp" style="display: none;">
-        <img id="gif4" src="https://media.giphy.com/media/NeS6EnbODxVywoMmJJ/giphy.gif" style="display: none;">
-        <img id="gif5" src="https://media1.giphy.com/media/v1.Y2lkPTQyMzA0NmQwdGlwNnFhNnViaWxvbm53bjJ5cXF5b2Npcm9xdnBlOTJrdGo5NnZtbSZlcD12MV9naWZzX2dpZklkJmN0PXM/kfRKF0iqA8jyDqq1nH/200.gif" style="display: none;">
-        <img id="gif6" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXZubDJpOXJ3NXJjY2wxOWh6Y2x0M3J4Ym15bWk5N2Z3dWhycGdoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/BGW14OrL4jDozdWRat/giphy.webp" style="display: none;">
+        <img id="gif1" class="full-gif" src="https://media.tenor.com/jg0-zHyA_8oAAAAi/winnie-the-pooh-pooh-bear.gif" style="display: none;">
+        <img id="gif2" class="full-gif" src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif" style="display: none;">
+        <img id="gif3" class="full-gif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ1NjN0azJld3k2cTRiMWxmOHFuZ2F4Y2Jmcm9wc25yd3I4ZDRzbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j4ABaI9BWdpYNI9ric/giphy.webp" style="display: none;">
+        <img id="gif4" class="full-gif" src="https://media.giphy.com/media/NeS6EnbODxVywoMmJJ/giphy.gif" style="display: none;">
+        <img id="gif5" class="full-gif" src="https://media1.giphy.com/media/v1.Y2lkPTQyMzA0NmQwdGlwNnFhNnViaWxvbm53bjJ5cXF5b2Npcm9xdnBlOTJrdGo5NnZtbSZlcD12MV9naWZzX2dpZklkJmN0PXM/kfRKF0iqA8jyDqq1nH/200.gif" style="display: none;">
     </div>
 
     <footer>
-        Made with ❤️ apo to Antraki soy
+        Made with 💖 apo to Antraki soy
     </footer>
+    
+    <div class="large-letter left-letter">Ε</div>
+    <div class="large-letter right-letter">Α</div>
     
     <script>
         function showGif(gifId) {

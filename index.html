@@ -91,6 +91,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             padding: 20px;
             max-width: 90%;
+            position: relative;
             animation: fadeIn 0.5s ease-in-out;
         }
         img.full-gif {
@@ -120,20 +121,20 @@
         }
         .large-letter {
             position: absolute;
-            font-size: 10em;
+            font-size: 8em; /* Μικρότερη γραμματοσειρά για καλύτερη τοποθέτηση */
             font-weight: bold;
             text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Σκιά */
             z-index: -1;
             font-family: 'Cursive', cursive; /* Καλλιγραφικό στυλ */
         }
         .left-letter {
-            left: 10%;
+            left: 5%;
             top: 50%;
             transform: translateY(-50%);
             color: #f48fb1; /* Ροζ */
         }
         .right-letter {
-            right: 10%;
+            right: 5%;
             top: 50%;
             transform: translateY(-50%);
             color: #42a5f5; /* Μπλε */
@@ -148,13 +149,13 @@
                 width: 80px;
             }
             .large-letter {
-                font-size: 7em;
+                font-size: 6em; /* Μικρότερη γραμματοσειρά για κινητά */
             }
             .left-letter {
-                left: 5%;
+                left: 2%;
             }
             .right-letter {
-                right: 5%;
+                right: 2%;
             }
         }
     </style>

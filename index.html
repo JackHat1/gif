@@ -8,7 +8,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background: linear-gradient(to bottom, #f8bbd0, #f5a6b1);
+            background: #ffffff; /* Λευκό φόντο */
             color: #333;
             margin: 0;
             padding: 0;
@@ -22,7 +22,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #d81b60;
+            color: #d81b60; /* Ροζ */
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
             position: relative;
         }
@@ -34,11 +34,11 @@
         }
         h1::before {
             left: -50px;
-            color: #f48fb1;
+            color: #f48fb1; /* Ανοιχτό ροζ */
         }
         h1::after {
             right: -50px;
-            color: #f48fb1;
+            color: #f48fb1; /* Ανοιχτό ροζ */
         }
         .menu {
             margin-bottom: 20px;
@@ -48,7 +48,7 @@
             justify-content: center;
         }
         .menu button {
-            background-color: #f06292;
+            background-color: #f06292; /* Ροζ */
             color: white;
             border: none;
             padding: 12px 24px;
@@ -60,13 +60,14 @@
             box-shadow: 0 4px 10px rgba(240, 98, 146, 0.2);
         }
         .menu button:hover {
-            background-color: #ec407a;
+            background-color: #ec407a; /* Σκοτεινότερο ροζ */
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(236, 64, 122, 0.3);
         }
         .gif-menu {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 20px;
         }
@@ -85,7 +86,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Λευκό φόντο για τα GIF */
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             padding: 20px;
@@ -101,10 +102,10 @@
             position: fixed;
             bottom: 10px;
             font-size: 0.9em;
-            color: #d81b60;
+            color: #d81b60; /* Ροζ */
         }
         footer a {
-            color: #d81b60;
+            color: #d81b60; /* Ροζ */
             text-decoration: none;
         }
         @keyframes fadeIn {
@@ -119,22 +120,42 @@
         }
         .large-letter {
             position: absolute;
-            font-size: 12em;
+            font-size: 10em;
             font-weight: bold;
-            color: #ffd700; /* Χρυσό χρώμα */
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Σκιά */
             z-index: -1;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Σκιά */
             font-family: 'Cursive', cursive; /* Καλλιγραφικό στυλ */
         }
         .left-letter {
-            left: 5%;
+            left: 10%;
             top: 50%;
             transform: translateY(-50%);
+            color: #f48fb1; /* Ροζ */
         }
         .right-letter {
-            right: 5%;
+            right: 10%;
             top: 50%;
             transform: translateY(-50%);
+            color: #42a5f5; /* Μπλε */
+        }
+
+        /* Media Queries για κινητά */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .gif-menu img {
+                width: 80px;
+            }
+            .large-letter {
+                font-size: 7em;
+            }
+            .left-letter {
+                left: 5%;
+            }
+            .right-letter {
+                right: 5%;
+            }
         }
     </style>
 </head>
@@ -159,7 +180,7 @@
     </div>
 
     <footer>
-        Made with 💖 apo to Antraki soy
+        Made with 💖 by apo to Antraki soy
     </footer>
     
     <div class="large-letter left-letter">Ε</div>
